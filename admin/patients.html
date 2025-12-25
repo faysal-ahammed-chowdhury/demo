@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Patients - Admin Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="../images/logo-blue.png" alt="DocHouse Logo"></a>
+            </div>
+            <div class="links">
+                <a class="link" href="index.html"><i class="fa-solid fa-house"></i><span>Dashboard</span></a>
+                <a class="link" href="doctors.html"><i class="fa-solid fa-user-doctor"></i><span>Doctors</span></a>
+                <a class="link active" href="patients.html"><i class="fa-solid fa-hospital-user"></i><span>Patients</span></a>
+                <a class="link" href="appointments.html"><i class="fa-solid fa-calendar-check"></i><span>Appointments</span></a>
+                <a class="link" href="specializations.html"><i class="fa-solid fa-tags"></i><span>Specializations</span></a>
+            </div>
+            <div class="user-actions">
+                <div class="profile-pill">
+                    <div class="user-details"><span class="welcome-text">Admin</span><span class="user-name">System Root</span></div>
+                    <div class="divider"></div>
+                    <a href="../auth/login.html" class="logout-icon"><i class="fa-solid fa-right-from-bracket"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>Manage Patients</h1>
+            <p>View and manage registered patient profiles and records.</p>
+        </div>
+    </div>
+
+    <section class="dashboard-section">
+        <div class="container">
+            
+            <div class="filter-bar">
+                <form class="filter-form">
+                    <div class="filter-group">
+                        <label>Search Patient</label>
+                        <input type="text" placeholder="Name, PID, or Phone...">
+                    </div>
+                    <div class="filter-group">
+                        <label>Registration Date</label>
+                        <input type="date">
+                    </div>
+                    <button type="submit" class="btn-filter">
+                        <i class="fa-solid fa-magnifying-glass" style="margin-right: 8px;"></i>Search
+                    </button>
+                    <a href="#" class="btn-reset">Reset</a>
+                </form>
+            </div>
+
+            <div class="dashboard-block">
+                <div class="block-header">
+                    <h2>Patient Directory</h2>
+                </div>
+
+                <div class="table-wrapper">
+                    <table class="history-table">
+                        <thead>
+                            <tr>
+                                <th>Patient</th>
+                                <th>Contact Info</th>
+                                <th>Date of Birth</th>
+                                <th>Joined Date</th>
+                                <th style="text-align: right;">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="table-user">
+                                        <div class="avatar-circle">JD</div>
+                                        <div>
+                                            <span>John Doe</span><br>
+                                            <small style="color: #888;">PID-5011</small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="date-time">
+                                        <span>john.doe@email.com</span>
+                                        <small>+1 234 567 8901</small>
+                                    </div>
+                                </td>
+                                <td>May 12, 1990</td>
+                                <td>Dec 15, 2025</td>
+                                <td style="text-align: right;">
+                                    <a href="patient-details.html" class="btn-icon view" title="View Profile"><i class="fa-solid fa-user-gear"></i></a>
+                                    <a href="#" class="btn-action delete" title="Delete Account"><i class="fa-solid fa-trash"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="table-user">
+                                        <div class="avatar-circle" style="background-color: #F37021;">AS</div>
+                                        <div>
+                                            <span>Alice Smith</span><br>
+                                            <small style="color: #888;">PID-5012</small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="date-time">
+                                        <span>alice.s@email.com</span>
+                                        <small>+1 987 654 3210</small>
+                                    </div>
+                                </td>
+                                <td>Aug 24, 1985</td>
+                                <td>Dec 20, 2025</td>
+                                <td style="text-align: right;">
+                                    <a href="patient-details.html" class="btn-icon view" title="View Profile"><i class="fa-solid fa-user-gear"></i></a>
+                                    <a href="#" class="btn-action delete" title="Delete Account"><i class="fa-solid fa-trash"></i></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>

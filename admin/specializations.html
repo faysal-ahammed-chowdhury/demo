@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Specializations - Admin Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="../images/logo-blue.png" alt="DocHouse Logo"></a>
+            </div>
+            <div class="links">
+                <a class="link" href="index.html"><i class="fa-solid fa-house"></i><span>Dashboard</span></a>
+                <a class="link" href="doctors.html"><i class="fa-solid fa-user-doctor"></i><span>Doctors</span></a>
+                <a class="link" href="patients.html"><i class="fa-solid fa-hospital-user"></i><span>Patients</span></a>
+                <a class="link" href="appointments.html"><i class="fa-solid fa-calendar-check"></i><span>Appointments</span></a>
+                <a class="link active" href="specializations.html"><i class="fa-solid fa-tags"></i><span>Specializations</span></a>
+            </div>
+            <div class="user-actions">
+                <div class="profile-pill">
+                    <div class="user-details">
+                        <span class="welcome-text">Admin</span>
+                        <span class="user-name">System Root</span>
+                    </div>
+                    <div class="divider"></div>
+                    <a href="../auth/login.html" class="logout-icon"><i class="fa-solid fa-right-from-bracket"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>Manage Specializations</h1>
+            <p>Create and manage medical categories for the platform.</p>
+        </div>
+    </div>
+
+    <section class="dashboard-section">
+        <div class="container">
+            
+            <div class="filter-bar">
+                <form class="filter-form">
+                    <div class="filter-group">
+                        <label>New Specialization Name</label>
+                        <input type="text" placeholder="e.g. Neurologist, Dentist..." required>
+                    </div>
+                    <button type="submit" class="btn-primary">
+                        <i class="fa-solid fa-plus"></i> Add Specialization
+                    </button>
+                </form>
+            </div>
+
+            <div class="dashboard-block">
+                <div class="block-header">
+                    <h2>Active Specializations</h2>
+                </div>
+
+                <div class="table-wrapper">
+                    <table class="history-table">
+                        <thead>
+                            <tr>
+                                <th># ID</th>
+                                <th>Specialization Name</th>
+                                <th>Associated Doctors</th>
+                                <th style="text-align: right;">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>#SP-01</strong></td>
+                                <td>
+                                    <div class="table-user">
+                                        <div class="avatar-circle" style="background-color: #eef7ff; color: #4DB4FA;">
+                                            <i class="fa-solid fa-heart-pulse"></i>
+                                        </div>
+                                        Cardiologist
+                                    </div>
+                                </td>
+                                <td>12 Doctors</td>
+                                <td style="text-align: right;">
+                                    <a href="#" class="btn-action edit" title="Rename"><i class="fa-solid fa-pen-to-square"></i></a>
+                                    <a href="#" class="btn-action delete" title="Delete"><i class="fa-solid fa-trash"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>#SP-02</strong></td>
+                                <td>
+                                    <div class="table-user">
+                                        <div class="avatar-circle" style="background-color: #fff5eb; color: #F37021;">
+                                            <i class="fa-solid fa-tooth"></i>
+                                        </div>
+                                        Dentist
+                                    </div>
+                                </td>
+                                <td>8 Doctors</td>
+                                <td style="text-align: right;">
+                                    <a href="#" class="btn-action edit" title="Rename"><i class="fa-solid fa-pen-to-square"></i></a>
+                                    <a href="#" class="btn-action delete" title="Delete"><i class="fa-solid fa-trash"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>#SP-03</strong></td>
+                                <td>
+                                    <div class="table-user">
+                                        <div class="avatar-circle" style="background-color: #f3e5f5; color: #9c27b0;">
+                                            <i class="fa-solid fa-brain"></i>
+                                        </div>
+                                        Neurologist
+                                    </div>
+                                </td>
+                                <td>5 Doctors</td>
+                                <td style="text-align: right;">
+                                    <a href="#" class="btn-action edit" title="Rename"><i class="fa-solid fa-pen-to-square"></i></a>
+                                    <a href="#" class="btn-action delete" title="Delete"><i class="fa-solid fa-trash"></i></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>

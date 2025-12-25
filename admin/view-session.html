@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Session Details - Doctor Panel</title>
+    <title>Session Details - Admin Panel</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
@@ -12,16 +12,18 @@
     <nav>
         <div class="container">
             <div class="logo">
-                <a href="dashboard.html"><img src="../images/logo-blue.png" alt="DocHouse"></a>
+                <a href="index.html"><img src="../images/logo-blue.png" alt="DocHouse Logo"></a>
             </div>
             <div class="links">
-                <a class="link" href="dashboard.html"><i class="fa-solid fa-chart-pie"></i><span>Dashboard</span></a>
-                <a class="link active" href="sessions.html"><i class="fa-solid fa-calendar-days"></i><span>My Sessions</span></a>
-                <a class="link" href="appointments.html"><i class="fa-solid fa-user-injured"></i><span>Appointments</span></a>
+                <a class="link" href="index.html"><i class="fa-solid fa-house"></i><span>Dashboard</span></a>
+                <a class="link active" href="doctors.html"><i class="fa-solid fa-user-doctor"></i><span>Doctors</span></a>
+                <a class="link" href="patients.html"><i class="fa-solid fa-hospital-user"></i><span>Patients</span></a>
+                <a class="link" href="appointments.html"><i class="fa-solid fa-calendar-check"></i><span>Appointments</span></a>
+                <a class="link" href="specializations.html"><i class="fa-solid fa-tags"></i><span>Specializations</span></a>
             </div>
             <div class="user-actions">
                 <div class="profile-pill">
-                    <div class="user-details"><span class="welcome-text">Dr.</span><a href="profile.html" class="user-name">Sarah Jenkins</a></div>
+                    <div class="user-details"><span class="welcome-text">Admin</span><span class="user-name">System Root</span></div>
                     <div class="divider"></div>
                     <a href="../auth/login.html" class="logout-icon"><i class="fa-solid fa-right-from-bracket"></i></a>
                 </div>
@@ -33,8 +35,9 @@
         <div class="container">
             <div class="header-flex">
                 <div>
+                    <a href="doctor-profile.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Profile</a>
                     <h1>Session #SES-102</h1>
-                    <p>Managing appointments for this specific time block.</p>
+                    <p>Managing appointments for <strong>Dr. Sarah Jenkins</strong>.</p>
                 </div>
                 <button class="btn-delete-large"><i class="fa-solid fa-trash"></i> Delete Session</button>
             </div>
@@ -50,7 +53,7 @@
                     <span class="value"><i class="fa-regular fa-calendar"></i> Dec 30, 2025</span>
                 </div>
                 <div class="summary-item">
-                    <span class="label">Time</span>
+                    <span class="label">Time Block</span>
                     <span class="value"><i class="fa-regular fa-clock"></i> 09:00 AM - 12:00 PM</span>
                 </div>
                 <div class="summary-item">
@@ -73,14 +76,16 @@
                         <thead>
                             <tr>
                                 <th>Slot Time</th>
+                                <th>Appointment ID</th>
                                 <th>Patient Name</th>
                                 <th>Status</th>
-                                <th>Action</th>
+                                <th style="text-align: right;">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td><strong>09:00 AM</strong></td>
+                                <td>#APT-5501</td>
                                 <td>
                                     <div class="table-user">
                                         <div class="avatar-circle">MR</div>
@@ -88,38 +93,42 @@
                                     </div>
                                 </td>
                                 <td><span class="status accepted">Accepted</span></td>
-                                <td>
-                                    <a href="appointment_details.html" class="btn-action view"><i class="fa-solid fa-eye"></i></a>
+                                <td style="text-align: right;">
+                                    <a href="appointment-details.html" class="btn-icon view"><i class="fa-solid fa-eye"></i></a>
                                 </td>
                             </tr>
 
                             <tr>
                                 <td><strong>09:15 AM</strong></td>
+                                <td>#APT-5502</td>
                                 <td>
                                     <div class="table-user">
-                                        <div class="avatar-circle">LJ</div>
+                                        <div class="avatar-circle" style="background-color: #F37021;">LJ</div>
                                         <span>Lisa Jenkins</span>
                                     </div>
                                 </td>
                                 <td><span class="status pending">Pending</span></td>
-                                <td>
-                                    <div class="action-buttons-row">
-                                        <a href="appointment_details.html" class="btn-action view"><i class="fa-solid fa-eye"></i></a>
+                                <td style="text-align: right;">
+                                    <div class="action-buttons-row" style="justify-content: flex-end;">
+                                        <a href="appointment-details.html" class="btn-icon view"><i class="fa-solid fa-eye"></i></a>
                                         <button class="btn-icon accept"><i class="fa-solid fa-check"></i></button>
                                         <button class="btn-icon reject"><i class="fa-solid fa-xmark"></i></button>
                                     </div>
                                 </td>
                             </tr>
+
                             <tr>
-                                <td><strong>10:00 AM</strong></td>
+                                <td><strong>09:30 AM</strong></td>
+                                <td>#APT-5503</td>
                                 <td>
                                     <div class="table-user">
-                                        <div class="avatar-circle">MR</div>
-                                        <span>Michael Ross</span>
+                                        <div class="avatar-circle" style="background-color: #999;">BW</div>
+                                        <span>Bob Wilson</span>
                                     </div>
                                 </td>
                                 <td><span class="status rejected">Rejected</span></td>
-                                <td>
+                                <td style="text-align: right;">
+                                    <a href="appointment-details.html" class="btn-icon view"><i class="fa-solid fa-eye"></i></a>
                                 </td>
                             </tr>
                         </tbody>

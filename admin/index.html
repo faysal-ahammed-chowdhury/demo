@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - DocHouse</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="../images/logo-blue.png" alt="DocHouse Logo"></a>
+            </div>
+            <div class="links">
+                <a class="link active" href="index.html"><i class="fa-solid fa-house"></i><span>Dashboard</span></a>
+                <a class="link" href="doctors.html"><i class="fa-solid fa-user-doctor"></i><span>Doctors</span></a>
+                <a class="link" href="patients.html"><i class="fa-solid fa-hospital-user"></i><span>Patients</span></a>
+                <a class="link" href="appointments.html"><i class="fa-solid fa-calendar-check"></i><span>Appointments</span></a>
+                <a class="link" href="specializations.html"><i class="fa-solid fa-tags"></i><span>Specializations</span></a>
+            </div>
+            <div class="user-actions">
+                <div class="profile-pill">
+                    <div class="user-details">
+                        <span class="welcome-text">Administrator</span>
+                        <span class="user-name">Md. Mehedi Hasan</span>
+                    </div>
+                    <div class="divider"></div>
+                    <a href="../auth/login.html" class="logout-icon"><i class="fa-solid fa-right-from-bracket"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>System Dashboard</h1>
+            <p>Overview of active doctors, registered patients, and scheduled appointments.</p>
+        </div>
+    </div>
+
+    <section class="dashboard-section">
+        <div class="container">
+            
+            <div class="stats-grid">
+                <div class="stat-card orange">
+                    <div class="stat-icon"><i class="fa-solid fa-user-doctor"></i></div>
+                    <div class="stat-info">
+                        <h3>24</h3>
+                        <span>Total Doctors</span>
+                    </div>
+                </div>
+
+                <div class="stat-card blue">
+                    <div class="stat-icon"><i class="fa-solid fa-hospital-user"></i></div>
+                    <div class="stat-info">
+                        <h3>1,240</h3>
+                        <span>Total Patients</span>
+                    </div>
+                </div>
+
+                <div class="stat-card green">
+                    <div class="stat-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                    <div class="stat-info">
+                        <h3>85</h3>
+                        <span>Total Appointments</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-block">
+                <div class="block-header">
+                    <h2>Recent Appointments</h2>
+                    <a href="appointments.html">View All <i class="fa-solid fa-arrow-right" style="margin-left: 5px;"></i></a>
+                </div>
+
+                <div class="table-wrapper">
+                    <table class="history-table">
+                        <thead>
+                            <tr>
+                                <th>APTID</th> 
+                                <th>Patient</th>
+                                <th>Doctor</th>
+                                <th>Schedule</th>
+                                <th>Status</th>
+                                <th style="text-align: right;">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>#1024</strong></td>
+                                <td>
+                                    <div class="table-user">
+                                        <div class="avatar-circle">JD</div>
+                                        <div>
+                                            <span>John Doe</span><br>
+                                            <small style="color: #888;">PID-501</small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="date-time">
+                                        <span>Dr. Sarah Jenkins</span>
+                                        <small style="color: #888;">DID-882</small>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="date-time">
+                                        <span>Dec 30, 2025</span>
+                                        <small style="color: #888;">10:00 AM (SIS-102)</small>
+                                    </div>
+                                </td>
+                                <td><span class="status accepted">Accepted</span></td>
+                                <td style="text-align: right;">
+                                    <a href="appointment-details.html" class="btn-icon view" title="Manage Record">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>#1025</strong></td>
+                                <td>
+                                    <div class="table-user">
+                                        <div class="avatar-circle" style="background-color: #F37021;">AS</div>
+                                        <div>
+                                            <span>Alice Smith</span><br>
+                                            <small style="color: #888;">PID-502</small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="date-time">
+                                        <span>Dr. Michael Ross</span>
+                                        <small style="color: #888;">DID-910</small>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="date-time">
+                                        <span>Dec 31, 2025</span>
+                                        <small style="color: #888;">11:30 AM (SIS-109)</small>
+                                    </div>
+                                </td>
+                                <td><span class="status pending">Pending</span></td>
+                                <td style="text-align: right;">
+                                    <a href="appointment-details.html" class="btn-icon view" title="Manage Record">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

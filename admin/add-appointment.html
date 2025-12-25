@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Appointment - Admin Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Precision Icon Alignment */
+        .input-group {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-group i {
+            position: absolute;
+            left: 15px;
+            top: 42px; 
+            color: #999;
+            font-size: 14px;
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        .input-group select, 
+        .input-group input {
+            padding-left: 40px !important;
+            appearance: none;
+            background-color: #fcfcfc;
+        }
+
+        .form-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+            padding-top: 25px;
+            border-top: 1px solid #eee;
+        }
+
+        /* Helper for the ID labels */
+        .id-text {
+            color: #4DB4FA;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="../images/logo-blue.png" alt="DocHouse Logo"></a>
+            </div>
+            <div class="links">
+                <a class="link" href="index.html"><i class="fa-solid fa-house"></i><span>Dashboard</span></a>
+                <a class="link" href="doctors.html"><i class="fa-solid fa-user-doctor"></i><span>Doctors</span></a>
+                <a class="link" href="patients.html"><i class="fa-solid fa-hospital-user"></i><span>Patients</span></a>
+                <a class="link active" href="appointments.html"><i class="fa-solid fa-calendar-check"></i><span>Appointments</span></a>
+                <a class="link" href="specializations.html"><i class="fa-solid fa-tags"></i><span>Specializations</span></a>
+            </div>
+            <div class="user-actions">
+                <div class="profile-pill">
+                    <div class="user-details"><span class="welcome-text">Admin</span><span class="user-name">System Root</span></div>
+                    <div class="divider"></div>
+                    <a href="../auth/login.html" class="logout-icon"><i class="fa-solid fa-right-from-bracket"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="container">
+            <a href="appointments.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Appointments</a>
+            <h1>Create New Appointment</h1>
+            <p>Manually book a patient into a doctor's available session slot.</p>
+        </div>
+    </div>
+
+    <section class="dashboard-section">
+        <div class="container">
+            
+            <form action="" method="POST" class="settings-card" style="max-width: 900px; margin: 0 auto;">
+                
+                <div class="section-title">
+                    <i class="fa-solid fa-id-badge"></i> 1. Select Patient (PID)
+                </div>
+                <div class="form-grid">
+                    <div class="input-group full-width">
+                        <label>Patient ID (PID)</label>
+                        <i class="fa-solid fa-fingerprint"></i>
+                        <select name="patient_id" required>
+                            <option value="" selected disabled>Search by PID or Name...</option>
+                            <option value="1">PID-1001: John Doe</option>
+                            <option value="2">PID-1002: Alice Smith</option>
+                            <option value="3">PID-1005: Robert Johnson</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="section-title" style="margin-top: 40px;">
+                    <i class="fa-solid fa-stethoscope"></i> 2. Doctor & Availability (DID)
+                </div>
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label>Doctor ID (DID)</label>
+                        <i class="fa-solid fa-user-doctor"></i>
+                        <select name="doctor_id" required>
+                            <option value="" selected disabled>Select by DID or Name...</option>
+                            <option value="1">DID-8820: Dr. Sarah Jenkins</option>
+                            <option value="2">DID-9102: Dr. Michael Ross</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Available Session</label>
+                        <i class="fa-regular fa-calendar-check"></i>
+                        <select name="session_id" required>
+                            <option value="" selected disabled>Select date & block...</option>
+                            <option value="102">Dec 30, 2025 (09:00 AM - 12:00 PM)</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Available Slot</label>
+                        <i class="fa-regular fa-clock"></i>
+                        <select name="slot_time" required>
+                            <option value="" selected disabled>Select exact time...</option>
+                            <option value="09:00">09:00 AM</option>
+                            <option value="09:15">09:15 AM</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Appointment Status</label>
+                        <i class="fa-solid fa-circle-info"></i>
+                        <select name="status">
+                            <option value="pending">Pending</option>
+                            <option value="accepted" selected>Accepted</option>
+                            <option value="rejected">Rejected</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-actions" style="margin-top: 40px;">
+                    <a href="appointments.html" class="btn-secondary">
+                        <i class="fa-solid fa-xmark" style="margin-right: 8px;"></i> Cancel
+                    </a>
+                    <button type="submit" class="btn-primary">
+                        <i class="fa-solid fa-calendar-plus" style="margin-right: 8px;"></i> Confirm Booking
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+    </section>
+
+</body>
+</html>

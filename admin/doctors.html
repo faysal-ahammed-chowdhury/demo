@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Doctors - Admin Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="../images/logo-blue.png" alt="DocHouse Logo"></a>
+            </div>
+            <div class="links">
+                <a class="link" href="index.html"><i class="fa-solid fa-house"></i><span>Dashboard</span></a>
+                <a class="link active" href="doctors.html"><i class="fa-solid fa-user-doctor"></i><span>Doctors</span></a>
+                <a class="link" href="patients.html"><i class="fa-solid fa-hospital-user"></i><span>Patients</span></a>
+                <a class="link" href="appointments.html"><i class="fa-solid fa-calendar-check"></i><span>Appointments</span></a>
+                <a class="link" href="specializations.html"><i class="fa-solid fa-tags"></i><span>Specializations</span></a>
+            </div>
+            <div class="user-actions">
+                <div class="profile-pill">
+                    <div class="user-details"><span class="welcome-text">Admin</span><span class="user-name">System Root</span></div>
+                    <div class="divider"></div>
+                    <a href="../auth/login.html" class="logout-icon"><i class="fa-solid fa-right-from-bracket"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+                <h1>Manage Doctors</h1>
+                <p>Register and update medical professionals across the platform.</p>
+            </div>
+            <a href="add-doctor.html" class="btn-primary">
+                <i class="fa-solid fa-plus"></i> Add New Doctor
+            </a>
+        </div>
+    </div>
+
+    <section class="dashboard-section">
+        <div class="container">
+            
+            <div class="filter-bar">
+                <form class="filter-form">
+                    <div class="filter-group">
+                        <label>Search Doctor</label>
+                        <input type="text" placeholder="Name, DID, or Email...">
+                    </div>
+                    <div class="filter-group">
+                        <label>Specialization</label>
+                        <select>
+                            <option value="">All Categories</option>
+                            <option value="SPID-01">Cardiology</option>
+                            <option value="SPID-02">Neurology</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-filter"><i class="fa-solid fa-filter"></i> Filter</button>
+                    <a href="#" class="btn-reset">Reset</a>
+                </form>
+            </div>
+
+            <div class="dashboard-block">
+                <div class="table-wrapper">
+                    <table class="history-table">
+                        <thead>
+                            <tr>
+                                <th>Doctor</th>
+                                <th>Email</th>
+                                <th>Specialization</th>
+                                <th>Phone</th>
+                                <th style="text-align: right;">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="table-user">
+                                        <div class="avatar-circle">SJ</div>
+                                        <div>
+                                            <span>Dr. Sarah Jenkins</span><br>
+                                            <small style="color: #888;">DID-8820</small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>sarah.j@example.com</td>
+                                <td>
+                                    <div class="date-time">
+                                        <span>Cardiologist</span>
+                                    </div>
+                                </td>
+                                <td>+1 234 567 890</td>
+                                <td style="text-align: right;">
+                                    <a href="doctor-profile.html" class="btn-icon view" title="View Profile"><i class="fa-solid fa-user-gear"></i></a>
+                                    <a href="#" class="btn-action delete" title="Remove Record"><i class="fa-solid fa-trash"></i></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

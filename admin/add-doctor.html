@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Doctor - Admin Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Specific Fixes for Icon Alignment */
+        .input-group {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-group i {
+            position: absolute;
+            left: 15px;
+            top: 42px; /* Adjusted to sit perfectly inside the input below the label */
+            color: #999;
+            font-size: 14px;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .input-group input, 
+        .input-group select {
+            padding-left: 40px !important; /* Forces text to start after the icon */
+        }
+
+        /* Fix for textarea which usually doesn't need an icon */
+        .input-group.field textarea {
+            padding-left: 15px !important;
+        }
+
+        .form-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="../images/logo-blue.png" alt="DocHouse Logo"></a>
+            </div>
+            <div class="links">
+                <a class="link" href="index.html"><i class="fa-solid fa-house"></i><span>Dashboard</span></a>
+                <a class="link active" href="doctors.html"><i class="fa-solid fa-user-doctor"></i><span>Doctors</span></a>
+                <a class="link" href="patients.html"><i class="fa-solid fa-hospital-user"></i><span>Patients</span></a>
+                <a class="link" href="appointments.html"><i class="fa-solid fa-calendar-check"></i><span>Appointments</span></a>
+                <a class="link" href="specializations.html"><i class="fa-solid fa-tags"></i><span>Specializations</span></a>
+            </div>
+            <div class="user-actions">
+                <div class="profile-pill">
+                    <div class="user-details">
+                        <span class="welcome-text">Admin</span>
+                        <span class="user-name">System Root</span>
+                    </div>
+                    <div class="divider"></div>
+                    <a href="../auth/login.html" class="logout-icon"><i class="fa-solid fa-right-from-bracket"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="container">
+            <a href="doctors.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Doctors List</a>
+            <h1>Add New Doctor</h1>
+            <p>Create a professional account for a new medical practitioner.</p>
+        </div>
+    </div>
+
+    <section class="dashboard-section">
+        <div class="container">
+            
+            <form action="" method="POST" class="settings-card" style="max-width: 1000px; margin: 0 auto;">
+                
+                <div class="section-title">
+                    <i class="fa-solid fa-lock"></i> 1. Account Credentials
+                </div>
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label>Email Address (Login ID)</label>
+                        <i class="fa-regular fa-envelope"></i>
+                        <input type="email" name="email" placeholder="doctor@example.com" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Temporary Password</label>
+                        <i class="fa-solid fa-key"></i>
+                        <input type="password" name="password" placeholder="Create a strong password" required>
+                    </div>
+                </div>
+
+                <div class="section-title" style="margin-top: 40px;">
+                    <i class="fa-solid fa-id-card"></i> 2. Professional Identity
+                </div>
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label>Full Name</label>
+                        <i class="fa-regular fa-user"></i>
+                        <input type="text" name="name" placeholder="e.g. Dr. Sarah Jenkins" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Specialization</label>
+                        <i class="fa-solid fa-stethoscope"></i>
+                        <select name="specialization" required>
+                            <option value="" selected disabled>Select Specialization</option>
+                            <option value="Cardiologist">Cardiologist</option>
+                            <option value="Neurologist">Neurologist</option>
+                            <option value="Dentist">Dentist</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Consultation Fee ($)</label>
+                        <i class="fa-solid fa-dollar-sign"></i>
+                        <input type="number" name="fee" placeholder="e.g. 150" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Phone Number</label>
+                        <i class="fa-solid fa-phone"></i>
+                        <input type="text" name="phone" placeholder="+1 234 567 890">
+                    </div>
+
+                    <div class="input-group full-width field">
+                        <label>Doctor Biography</label>
+                        <textarea name="bio" rows="5" placeholder="Enter professional background, experience, and education details..."></textarea>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <a href="doctors.html" class="btn-secondary">
+                        <i class="fa-solid fa-xmark"></i> Cancel
+                    </a>
+                    <button type="submit" class="btn-primary">
+                        <i class="fa-solid fa-user-plus"></i> Register Doctor
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+    </section>
+
+</body>
+</html>
