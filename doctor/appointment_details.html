@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Details - Doctor Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Embedded CSS for Status Boxes to ensure they look right immediately */
+        .status-box {
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: bold;
+            font-size: 18px;
+            display: flex; /* Default display for the box */
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+        }
+        .status-box i { font-size: 24px; }
+        
+        /* Pending Colors */
+        .status-box.pending { background-color: #fff8e1; color: #ffa000; border: 1px solid #ffe082; }
+        
+        /* Accepted Colors */
+        .status-box.accepted { background-color: #e8f5e9; color: #2e7d32; border: 1px solid #c8e6c9; }
+        
+        /* Rejected Colors */
+        .status-box.rejected { background-color: #ffebee; color: #c62828; border: 1px solid #ffcdd2; }
+
+        /* Button Colors */
+        .btn-accept { background-color: #27ae60; color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer; width: 100%; margin-bottom: 10px; font-size: 16px;}
+        .btn-reject { background-color: #c0392b; color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer; width: 100%; font-size: 16px;}
+        .btn-accept:hover, .btn-reject:hover { opacity: 0.9; }
+        
+        /* Message for closed states */
+        .closed-msg { text-align: center; color: #777; font-style: italic; margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <a href="dashboard.html"><img src="../images/logo-blue.png" alt="DocHouse"></a>
+            </div>
+            <div class="links">
+                <a class="link" href="dashboard.html"><i class="fa-solid fa-chart-pie"></i><span>Dashboard</span></a>
+                <a class="link" href="sessions.html"><i class="fa-solid fa-calendar-days"></i><span>My Sessions</span></a>
+                <a class="link active" href="appointments.html"><i class="fa-solid fa-user-injured"></i><span>Appointments</span></a>
+            </div>
+            <div class="user-actions">
+                <div class="profile-pill">
+                    <div class="user-details"><span class="welcome-text">Dr.</span><a href="profile.html" class="user-name">Sarah Jenkins</a></div>
+                    <div class="divider"></div>
+                    <a href="../auth/login.html" class="logout-icon"><i class="fa-solid fa-right-from-bracket"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="container">
+            <a href="appointments.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to List</a>
+            <h1>Appointment #APT-102</h1>
+        </div>
+    </div>
+
+    <section class="dashboard-section">
+        <div class="container">
+            <div class="details-grid">
+                
+                <div class="details-card">
+                    <h3>Patient Information</h3>
+                    <div class="info-row">
+                        <span class="label">Name:</span>
+                        <span class="value">Michael Ross</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">Email:</span>
+                        <span class="value">michael.ross@example.com</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">Phone:</span>
+                        <span class="value">+1 555 012 3456</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">Age/Gender:</span>
+                        <span class="value">34 Years / Male</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">Notes:</span>
+                        <p class="value-text">Patient complains of recurring migraines specifically in the mornings.</p>
+                    </div>
+                </div>
+
+                <div class="details-card">
+                    <h3>Appointment Status</h3>
+                    
+                    <div class="status-box pending" style="display: flex;">
+                        <i class="fa-regular fa-clock"></i>
+                        <span>Pending</span>
+                    </div>
+
+                    <div class="status-box accepted" style="display: none;">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>Accepted</span>
+                    </div>
+
+                    <div class="status-box rejected" style="display: none;">
+                        <i class="fa-solid fa-circle-xmark"></i>
+                        <span>Rejected</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">Date:</span>
+                        <span class="value">Dec 28, 2025</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">Time:</span>
+                        <span class="value">09:00 AM - 09:15 AM</span>
+                    </div>
+
+
+                    <div class="action-buttons-stack" style="display: block;">
+                        <button class="btn-accept">
+                            <i class="fa-solid fa-check"></i> Accept Request
+                        </button>
+                        <button class="btn-reject">
+                            <i class="fa-solid fa-xmark"></i> Reject Request
+                        </button>
+                    </div>
+
+                    <div class="closed-msg" style="display: none;">
+                        This appointment is closed. No further actions available.
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

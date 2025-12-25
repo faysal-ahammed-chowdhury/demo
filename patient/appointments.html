@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Appointments - Patient Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <a href="home.html"><img src="../images/logo-blue.png" alt="DocHouse Logo"></a>
+            </div>
+            <div class="links">
+                <a class="link" href="home.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
+                <a class="link" href="doctors.html"><i class="fa-solid fa-user-doctor"></i><span>Find Doctors</span></a>
+                <a class="link active" href="appointments.html"><i class="fa-solid fa-calendar-check"></i><span>My Appointments</span></a>
+            </div>
+            <div class="user-actions">
+                <div class="profile-pill">
+                    <div class="user-details"><span class="welcome-text">Patient</span><a href="profile.html" class="user-name">John Doe</a></div>
+                    <div class="divider"></div>
+                    <a href="../auth/login.html" class="logout-icon"><i class="fa-solid fa-right-from-bracket"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>My Appointments</h1>
+            <p>Track the status of your past and upcoming doctor visits.</p>
+        </div>
+    </div>
+
+    <section class="dashboard-section">
+        <div class="container">
+
+            <div class="filter-bar">
+                <form action="" method="GET" class="filter-form">
+                    <div class="filter-group">
+                        <label>Filter by Date</label>
+                        <input type="date" name="filter_date">
+                    </div>
+                    <div class="filter-group">
+                        <label>Status</label>
+                        <select name="status">
+                            <option value="all">All Appointments</option>
+                            <option value="pending">Pending</option>
+                            <option value="accepted">Accepted</option>
+                            <option value="rejected">Rejected</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-filter"><i class="fa-solid fa-filter"></i> Filter</button>
+                    <a href="appointments.html" class="btn-reset">Reset</a>
+                </form>
+            </div>
+
+            <div class="dashboard-block">
+                <div class="table-wrapper">
+                    <table class="history-table">
+                        <thead>
+                            <tr>
+                                <th>Doctor Name</th>
+                                <th>Specialization</th>
+                                <th>Date & Time</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr>
+                                <td>
+                                    <div class="table-user">
+                                        <div class="avatar-circle">SJ</div>
+                                        <span>Dr. Sarah Jenkins</span>
+                                    </div>
+                                </td>
+                                <td>Cardiologist</td>
+                                <td>
+                                    <div class="date-time">
+                                        <span>Tomorrow, Dec 30</span>
+                                        <small>10:00 AM</small>
+                                    </div>
+                                </td>
+                                <td><span class="status accepted">Accepted</span></td>
+                                <td>
+                                    <a href="appointment_details.html" class="btn-action view" title="View Details">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div class="table-user">
+                                        <div class="avatar-circle">MR</div>
+                                        <span>Dr. Mike Ross</span>
+                                    </div>
+                                </td>
+                                <td>Neurologist</td>
+                                <td>
+                                    <div class="date-time">
+                                        <span>Monday, Jan 05</span>
+                                        <small>02:00 PM</small>
+                                    </div>
+                                </td>
+                                <td><span class="status pending">Pending</span></td>
+                                <td>
+                                    <a href="appointment_details.html" class="btn-action view" title="View Details">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div class="table-user">
+                                        <div class="avatar-circle">DK</div>
+                                        <span>Dr. David Kim</span>
+                                    </div>
+                                </td>
+                                <td>Dentist</td>
+                                <td>
+                                    <div class="date-time">
+                                        <span>Dec 20, 2025</span>
+                                        <small>09:30 AM</small>
+                                    </div>
+                                </td>
+                                <td><span class="status rejected">Rejected</span></td>
+                                <td>
+                                    <a href="appointment_details.html" class="btn-action view" title="View Details">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </a>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>

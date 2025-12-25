@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Sessions - Doctor Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <a href="dashboard.html">
+                    <img src="../images/logo-blue.png" alt="DocHouse Logo">
+                </a>
+            </div>
+            <div class="links">
+                <a class="link" href="dashboard.html">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a class="link active" href="sessions.html">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <span>My Sessions</span>
+                </a>
+                <a class="link" href="appointments.html">
+                    <i class="fa-solid fa-user-injured"></i>
+                    <span>Appointments</span>
+                </a>
+            </div>
+            <div class="user-actions">
+                <div class="profile-pill">
+                    <div class="user-details">
+                        <span class="welcome-text">Dr.</span>
+                        <a href="profile.html" class="user-name">Sarah Jenkins</a>
+                    </div>
+                    <div class="divider"></div>
+                    <a href="../auth/login.html" class="logout-icon">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>My Sessions</h1>
+            <p>Create availability slots for patients to book.</p>
+        </div>
+    </div>
+
+    <section class="schedule-section">
+        <div class="container">
+            
+            <div class="schedule-layout">
+                
+                <div class="schedule-form-card">
+                    <h3><i class="fa-solid fa-plus-circle"></i> Create Session</h3>
+                    
+                    <form action="" method="POST">
+                        <div class="field">
+                            <label>Date</label>
+                            <input type="date" name="session_date" >
+                        </div>
+
+                        <div class="time-row">
+                            <div class="field half">
+                                <label>Start Time</label>
+                                <input type="time" name="start_time" >
+                            </div>
+                            <div class="field half">
+                                <label>End Time</label>
+                                <input type="time" name="end_time" >
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label>Slot Duration (Minutes)</label>
+                            <select name="duration">
+                                <option value="15">15 Minutes</option>
+                                <option value="20">20 Minutes</option>
+                                <option value="30">30 Minutes</option>
+                                <option value="60">60 Minutes</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn-primary full-width">Add Session</button>
+                    </form>
+
+                    <div class="info-box">
+                        <i class="fa-solid fa-circle-info"></i>
+                        <p>This will automatically generate appointment slots based on the duration you select.</p>
+                    </div>
+                </div>
+
+                <div class="schedule-list-card">
+                    <h3><i class="fa-solid fa-list-ul"></i> Upcoming Sessions</h3>
+
+                    <div class="schedule-item">
+                        <div class="date-box">
+                            <span class="day">30</span>
+                            <span class="month">Dec</span>
+                        </div>
+                        <div class="schedule-details">
+                            <h4>Session #SES-102</h4>
+                            <div class="time-range">
+                                <i class="fa-regular fa-clock"></i>
+                                <span>09:00 AM - 12:00 PM</span>
+                            </div>
+                            <div class="slot-badges">
+                                <span class="badge green">15 Min Slots</span>
+                                <span class="badge">6 Booked</span>
+                            </div>
+                        </div>
+                        <div class="item-actions">
+                            <a href="session_details.html" class="btn-action view"><i class="fa-solid fa-eye"></i></a>
+                            <button class="btn-delete"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="date-box">
+                            <span class="day">02</span>
+                            <span class="month">Jan</span>
+                        </div>
+                        <div class="schedule-details">
+                            <h4>Session #SES-105</h4>
+                            <div class="time-range">
+                                <i class="fa-regular fa-clock"></i>
+                                <span>02:00 PM - 05:00 PM</span>
+                            </div>
+                            <div class="slot-badges">
+                                <span class="badge green">20 Min Slots</span>
+                                <span class="badge">0 Booked</span>
+                            </div>
+                        </div>
+                        <div class="item-actions">
+                            <a href="session_details.html" class="btn-action view"><i class="fa-solid fa-eye"></i></a>
+                            <button class="btn-delete"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

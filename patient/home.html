@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Patient Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* --- Hero Section Specific Styles --- */
+        .patient-hero {
+            background-color: #eef7ff;
+            padding: 80px 0;
+            text-align: center;
+            border-bottom: 1px solid #e1e1e1;
+        }
+
+        .hero-content h1 {
+            font-size: 36px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .hero-content p {
+            color: #777;
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+
+        /* Big Search Bar */
+        .hero-search-box {
+            background: white;
+            padding: 10px;
+            border-radius: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            max-width: 700px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            border: 1px solid #ddd;
+        }
+
+        .hero-search-box i {
+            color: #ccc;
+            margin-left: 20px;
+            font-size: 18px;
+        }
+
+        .hero-search-box input {
+            border: none;
+            outline: none;
+            width: 100%;
+            padding: 15px;
+            font-size: 16px;
+        }
+
+        .btn-search-hero {
+            background-color: #4DB4FA;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 40px;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.2s;
+        }
+        .btn-search-hero:hover { background-color: #2980b9; }
+
+        /* Specialties Grid */
+        .specialties-section { padding: 60px 0; }
+        
+        .section-header { text-align: center; margin-bottom: 40px; }
+        .section-header h2 { font-size: 24px; color: #2c3e50; margin-bottom: 10px; }
+        .section-header p { color: #777; }
+
+        .specialties-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .specialty-card {
+            background: white;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            transition: 0.2s;
+            cursor: pointer;
+            display: block; /* Make <a> behave like block */
+        }
+
+        .specialty-card:hover {
+            border-color: #4DB4FA;
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(77, 180, 250, 0.1);
+        }
+
+        .icon-box {
+            width: 60px; height: 60px;
+            background-color: #f8f9fa;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 15px auto;
+            font-size: 24px; color: #4DB4FA;
+            transition: 0.2s;
+        }
+
+        .specialty-card:hover .icon-box {
+            background-color: #4DB4FA;
+            color: white;
+        }
+
+        .specialty-card h3 { font-size: 16px; color: #333; }
+
+        /* Upcoming Teaser */
+        .upcoming-teaser {
+            background: #fff8e1;
+            border: 1px solid #ffe082;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            max-width: 600px;
+        }
+        .teaser-date { font-weight: 700; color: #856404; }
+        .teaser-info { color: #555; font-size: 14px; }
+        .btn-link { color: #856404; text-decoration: underline; font-weight: 600; font-size: 13px; margin-left: auto; }
+
+        @media (max-width: 900px) {
+            .specialties-grid { grid-template-columns: repeat(2, 1fr); }
+            .hero-search-box { flex-direction: column; padding: 20px; gap: 10px; border-radius: 12px; }
+            .btn-search-hero { width: 100%; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <a href="home.html">
+                    <img src="../images/logo-blue.png" alt="DocHouse Logo">
+                </a>
+            </div>
+            <div class="links">
+                <a class="link active" href="home.html">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Home</span>
+                </a>
+                <a class="link" href="doctors.html">
+                    <i class="fa-solid fa-user-doctor"></i>
+                    <span>Find Doctors</span>
+                </a>
+                <a class="link" href="appointments.html">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span>My Appointments</span>
+                </a>
+            </div>
+            <div class="user-actions">
+                <div class="profile-pill">
+                    <div class="user-details">
+                        <span class="welcome-text">Patient</span>
+                        <a href="profile.html" class="user-name">John Doe</a>
+                    </div>
+                    <div class="divider"></div>
+                    <a href="../auth/login.html" class="logout-icon">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="patient-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Your Health Is Our Top Priority</h1>
+                <p>Book appointments with top specialists.</p>
+
+                <a href="doctors.html" type="submit" class="btn-search-hero">Find a Doctor</a>
+
+            </div>
+        </div>
+    </header>
+
+    <section class="specialties-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Browse by Specialization</h2>
+                <p>Select a category to view available doctors.</p>
+            </div>
+
+            <div class="specialties-grid">
+                
+                <a href="doctors.html?cat=cardiologist" class="specialty-card">
+                    <div class="icon-box"><i class="fa-solid fa-heart-pulse"></i></div>
+                    <h3>Cardiologist</h3>
+                </a>
+
+                <a href="doctors.html?cat=dentist" class="specialty-card">
+                    <div class="icon-box"><i class="fa-solid fa-tooth"></i></div>
+                    <h3>Dentist</h3>
+                </a>
+
+                <a href="doctors.html?cat=neurologist" class="specialty-card">
+                    <div class="icon-box"><i class="fa-solid fa-brain"></i></div>
+                    <h3>Neurologist</h3>
+                </a>
+
+                <a href="doctors.html?cat=orthopedic" class="specialty-card">
+                    <div class="icon-box"><i class="fa-solid fa-bone"></i></div>
+                    <h3>Orthopedic</h3>
+                </a>
+
+                 <a href="doctors.html?cat=general" class="specialty-card">
+                    <div class="icon-box"><i class="fa-solid fa-user-doctor"></i></div>
+                    <h3>General Physician</h3>
+                </a>
+
+                <a href="doctors.html?cat=dermatologist" class="specialty-card">
+                    <div class="icon-box"><i class="fa-solid fa-hand-dots"></i></div>
+                    <h3>Dermatologist</h3>
+                </a>
+
+                <a href="doctors.html?cat=pediatrician" class="specialty-card">
+                    <div class="icon-box"><i class="fa-solid fa-baby"></i></div>
+                    <h3>Pediatrician</h3>
+                </a>
+
+                <a href="doctors.html?cat=eye" class="specialty-card">
+                    <div class="icon-box"><i class="fa-solid fa-eye"></i></div>
+                    <h3>Eye Care</h3>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

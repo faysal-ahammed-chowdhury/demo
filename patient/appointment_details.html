@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Details - Patient Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .status-box {
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: bold;
+            font-size: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+        }
+        .status-box i { font-size: 24px; }
+        
+        .status-box.pending { background-color: #fff8e1; color: #ffa000; border: 1px solid #ffe082; }
+        .status-box.accepted { background-color: #e8f5e9; color: #2e7d32; border: 1px solid #c8e6c9; }
+        .status-box.rejected { background-color: #ffebee; color: #c62828; border: 1px solid #ffcdd2; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <a href="home.html"><img src="../images/logo-blue.png" alt="DocHouse Logo"></a>
+            </div>
+            <div class="links">
+                <a class="link" href="home.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
+                <a class="link" href="doctors.html"><i class="fa-solid fa-user-doctor"></i><span>Find Doctors</span></a>
+                <a class="link active" href="appointments.html"><i class="fa-solid fa-calendar-check"></i><span>My Appointments</span></a>
+            </div>
+            <div class="user-actions">
+                <div class="profile-pill">
+                    <div class="user-details"><span class="welcome-text">Patient</span><a href="profile.html" class="user-name">John Doe</a></div>
+                    <div class="divider"></div>
+                    <a href="../auth/login.html" class="logout-icon"><i class="fa-solid fa-right-from-bracket"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="container">
+            <a href="appointments.html" class="back-link" style="color: #4DB4FA; font-weight: 600; margin-bottom: 10px; display: inline-block;">
+                <i class="fa-solid fa-arrow-left"></i> Back to My Appointments
+            </a>
+            <h1>Appointment #APT-502</h1>
+        </div>
+    </div>
+
+    <section class="dashboard-section">
+        <div class="container">
+            <div class="details-grid">
+                
+                <div class="details-card">
+                    <h3>Doctor Information</h3>
+                    <div class="info-row">
+                        <span class="label">Doctor Name:</span>
+                        <span class="value">Dr. Sarah Jenkins</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">Specialization:</span>
+                        <span class="value">Cardiologist</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">Hospital/Clinic:</span>
+                        <span class="value">New York Medical Center</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">Consultation Fee:</span>
+                        <span class="value">$150</span>
+                    </div>
+                </div>
+
+                <div class="details-card">
+                    <h3>Appointment Status</h3>
+                    
+                    <div class="status-box rejected">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>Accepted</span>
+                    </div>
+
+                    <div class="info-row">
+                        <span class="label">Date:</span>
+                        <span class="value">Dec 30, 2025</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">Time Slot:</span>
+                        <span class="value">10:00 AM - 10:15 AM</span>
+                    </div>
+
+                    <div style="margin-top: 20px; text-align: center;">
+                        <small style="color: #777;">To reschedule or cancel, please contact the clinic directly.</small>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

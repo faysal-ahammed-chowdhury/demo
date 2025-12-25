@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Registration - DocHouse</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <div class="auth-container">
+        
+        <div class="auth-brand">
+            <div class="brand-content">
+                <img src="../images/logo-blue.png" alt="DocHouse Logo" class="brand-logo">
+                <p>Join our community. Create your patient account to book appointments and track your health history.</p>
+            </div>
+        </div>
+
+        <div class="auth-form-wrapper">
+            <div class="auth-form-card">
+                <div class="mobile-logo">
+                    <img src="../images/logo-blue.png" alt="DocHouse">
+                </div>
+
+                <h2>Create Account</h2>
+                <p class="subtitle">Enter your details to register as a new patient.</p>
+
+                <form action="login.html" method="POST">
+                    
+                    <div class="input-group">
+                        <label>Full Name</label>
+                        <i class="fa-regular fa-user"></i>
+                        <input type="text" name="fullname" placeholder="John Doe" >
+                    </div>
+
+                    <div class="input-group">
+                        <label>Email Address</label>
+                        <i class="fa-regular fa-envelope"></i>
+                        <input type="email" name="email" placeholder="john@example.com" >
+                    </div>
+
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label>Phone Number</label>
+                            <i class="fa-solid fa-phone"></i>
+                            <input type="tel" name="phone" placeholder="+1 234..." >
+                        </div>
+
+                        <div class="input-group">
+                            <label>Gender</label>
+                            <i class="fa-solid fa-venus-mars"></i>
+                            <select name="gender" >
+                                <option value="" disabled selected>Select</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Date of Birth</label>
+                        <i class="fa-regular fa-calendar"></i>
+                        <input type="date" name="dob" >
+                    </div>
+
+                    <div class="input-group">
+                        <label>Security Question</label>
+                        <i class="fa-solid fa-circle-question"></i>
+                        <select name="security_question" >
+                            <option value="" disabled selected>Select a recovery question...</option>
+                            <option value="pet">What was the name of your first pet?</option>
+                            <option value="school">What is the name of your first school?</option>
+                            <option value="mother">What is your mother's maiden name?</option>
+                            <option value="city">In what city were you born?</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Security Answer</label>
+                        <i class="fa-solid fa-pen"></i>
+                        <input type="text" name="security_answer" placeholder="Enter your answer" >
+                    </div>
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label>Password</label>
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" name="password" placeholder="Password" >
+                        </div>
+
+                        <div class="input-group">
+                            <label>Confirm</label>
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" name="confirm_password" placeholder="Confirm" >
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-primary" style="margin-top: 10px;">Sign Up</button>
+
+                    <div class="divider">
+                        <span>OR</span>
+                    </div>
+
+                    <p class="register-link">
+                        Already have an account? <a href="login.html">Sign In</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Doctor Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <a href="#">
+                    <img src="../images/logo-blue.png" alt="DocHouse Logo">
+                </a>
+            </div>
+            <div class="links">
+                <a class="link active" href="dashboard.html">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a class="link" href="sessions.html">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <span>My Sessions</span>
+                </a>
+                <a class="link" href="appointments.html">
+                    <i class="fa-solid fa-user-injured"></i>
+                    <span>Appointments</span>
+                </a>
+            </div>
+            <div class="user-actions">
+                <div class="profile-pill">
+                    <div class="user-details">
+                        <span class="welcome-text">Dr.</span>
+                        <a href="profile.html" class="user-name">Sarah Jenkins</a>
+                    </div>
+                    <div class="divider"></div>
+                    <a href="../auth/login.html" class="logout-icon">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>Doctor Dashboard</h1>
+            <p>Welcome back! Here is your daily summary and upcoming activity.</p>
+        </div>
+    </div>
+
+    <section class="dashboard-section">
+        <div class="container">
+
+            <div class="stats-grid">
+                <div class="stat-card blue">
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>124</h3>
+                        <span>Total Patients</span>
+                    </div>
+                </div>
+
+                <div class="stat-card green">
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-calendar-check"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>08</h3>
+                        <span>Appointments Today</span>
+                    </div>
+                </div>
+
+                <div class="stat-card orange">
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>03</h3>
+                        <span>Pending Requests</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-block">
+                <div class="block-header">
+                    <h2>Upcoming Appointments</h2>
+                    <a href="appointments.html">View All Appointments <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <div class="table-wrapper">
+                    <table class="history-table">
+                        <thead>
+                            <tr>
+                                <th>Patient Name</th>
+                                <th>Date & Time</th>
+                                <th>Status</th>
+                                <th>Quick Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr>
+                                <td>
+                                    <div class="table-user">
+                                        <div class="avatar-circle">LJ</div>
+                                        <span>Lisa Jenkins</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="date-time">
+                                        <span>Today, Dec 29</span>
+                                        <small>10:30 AM</small>
+                                    </div>
+                                </td>
+                                <td><span class="status pending">Pending</span></td>
+                                <td>
+                                    <div class="action-buttons-row">
+                                        <a href="appointment_details.html" class="btn-action view"><i class="fa-solid fa-eye"></i></a>
+                                        <button class="btn-icon accept" title="Accept">
+                                            <i class="fa-solid fa-check"></i>
+                                        </button>
+                                        <button class="btn-icon reject" title="Reject">
+                                            <i class="fa-solid fa-xmark"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div class="table-user">
+                                        <div class="avatar-circle">MR</div>
+                                        <span>Michael Ross</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="date-time">
+                                        <span>Today, Dec 29</span>
+                                        <small>11:30 AM</small>
+                                    </div>
+                                </td>
+                                <td><span class="status rejected">Rejected</span></td>
+                                <td>
+                                    <a href="appointment_details.html" class="btn-action view"><i class="fa-solid fa-eye"></i></a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div class="table-user">
+                                        <div class="avatar-circle">DK</div>
+                                        <span>David Kim</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="date-time">
+                                        <span>Tomorrow, Dec 30</span>
+                                        <small>09:00 AM</small>
+                                    </div>
+                                </td>
+                                <td><span class="status accepted">Accepted</span></td>
+                                <td>
+                                    <a href="appointment_details.html" class="btn-action view"><i class="fa-solid fa-eye"></i></a>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>

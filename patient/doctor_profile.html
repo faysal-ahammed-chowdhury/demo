@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Sarah Jenkins - Patient Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* --- Profile Page Layout --- */
+        .profile-container {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 40px;
+            padding: 40px 0;
+            align-items: start;
+        }
+
+        /* Left Side: Doctor Details */
+        .doc-profile-header {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #e1e1e1;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .profile-avatar {
+            width: 100px; height: 100px;
+            background: #eef7ff; color: #4DB4FA;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 32px; font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .profile-info h1 { font-size: 24px; color: #2c3e50; margin-bottom: 5px; }
+        .profile-specialty { color: #4DB4FA; font-weight: 600; font-size: 15px; text-transform: uppercase; margin-bottom: 10px; display: block; }
+        
+        .profile-stats { display: flex; gap: 20px; font-size: 14px; color: #555; }
+        .profile-stats span i { color: #ccc; margin-right: 5px; }
+
+        .doc-bio-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #e1e1e1;
+        }
+        .doc-bio-card h3 { color: #2c3e50; margin-bottom: 15px; font-size: 18px; }
+        .doc-bio-card p { line-height: 1.6; color: #555; margin-bottom: 15px; }
+
+        /* Right Side: Booking Widget */
+        .booking-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #e1e1e1;
+            position: sticky;
+            top: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .booking-header { border-bottom: 1px solid #eee; padding-bottom: 15px; margin-bottom: 20px; }
+        .booking-header h3 { font-size: 18px; color: #2c3e50; }
+
+        .session-select { margin-bottom: 20px; }
+        .session-select label { display: block; font-weight: 700; margin-bottom: 8px; font-size: 13px; color: #555; }
+        .session-select select {
+            width: 100%; padding: 10px; border: 1px solid #ddd;
+            border-radius: 6px; font-size: 14px; background: #fcfcfc;
+        }
+
+        .slots-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        /* Slot Buttons */
+        .slot-btn {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 8px;
+            border-radius: 6px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: 0.2s;
+            color: #555;
+        }
+        .slot-btn:hover { border-color: #4DB4FA; color: #4DB4FA; }
+        
+        .slot-btn.selected {
+            background-color: #4DB4FA;
+            color: white;
+            border-color: #4DB4FA;
+        }
+
+        .slot-btn.disabled {
+            background-color: #f9f9f9;
+            color: #ccc;
+            border-color: #eee;
+            cursor: not-allowed;
+            text-decoration: line-through;
+        }
+
+        .btn-confirm-booking {
+            display: block; width: 100%;
+            background-color: #2c3e50; color: white;
+            border: none; padding: 15px; border-radius: 6px;
+            font-weight: 700; cursor: pointer; font-size: 15px;
+            transition: 0.2s;
+        }
+        .btn-confirm-booking:hover { background-color: #1a252f; }
+
+        @media (max-width: 900px) {
+            .profile-container { grid-template-columns: 1fr; }
+            .booking-card { position: static; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <a href="home.html"><img src="../images/logo-blue.png" alt="DocHouse Logo"></a>
+            </div>
+            <div class="links">
+                <a class="link" href="home.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
+                <a class="link active" href="doctors.html"><i class="fa-solid fa-user-doctor"></i><span>Find Doctors</span></a>
+                <a class="link" href="appointments.html"><i class="fa-solid fa-calendar-check"></i><span>My Appointments</span></a>
+            </div>
+            <div class="user-actions">
+                <div class="profile-pill">
+                    <div class="user-details"><span class="welcome-text">Patient</span><a href="profile.html" class="user-name">John Doe</a></div>
+                    <div class="divider"></div>
+                    <a href="../auth/login.html" class="logout-icon"><i class="fa-solid fa-right-from-bracket"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="container">
+            <a href="doctors.html" style="color: #4DB4FA; font-weight: 600; margin-bottom: 10px; display: inline-block;">
+                <i class="fa-solid fa-arrow-left"></i> Back to List
+            </a>
+            <h1>Doctor Profile</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="profile-container">
+            
+            <div class="profile-details">
+                
+                <div class="doc-profile-header">
+                    <div class="profile-avatar">SJ</div>
+                    <div class="profile-info">
+                        <h1>Dr. Sarah Jenkins</h1>
+                        <span class="profile-specialty">Cardiologist</span>
+                        <div class="profile-stats">
+                            <span><i class="fa-solid fa-dollar-sign"></i> Fee: <strong>$150</strong></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="doc-bio-card">
+                    <h3>About Dr. Sarah</h3>
+                    <p>Dr. Sarah Jenkins is a board-certified Cardiologist dedicated to providing comprehensive heart care. With a focus on preventive cardiology, she helps patients manage risk factors such as hypertension and high cholesterol.</p>
+                    <p>She completed her residency at Mayo Clinic and has been practicing for over a decade. Her patient-centric approach ensures that every individual receives a personalized treatment plan.</p>
+                </div>
+
+            </div>
+
+            <aside class="booking-widget">
+                <div class="booking-card">
+                    <div class="booking-header">
+                        <h3>Book an Appointment</h3>
+                    </div>
+
+                    <form action="appointments.html" method="GET"> 
+                        <div class="session-select">
+                            <label>Select Available Session</label>
+                            <select name="session_id">
+                                <option value="1">Tomorrow, Dec 30 (09:00 AM - 12:00 PM)</option>
+                                <option value="2">Friday, Jan 02 (02:00 PM - 05:00 PM)</option>
+                                <option value="3">Monday, Jan 05 (09:00 AM - 12:00 PM)</option>
+                            </select>
+                        </div>
+
+                        <div class="session-select">
+                            <label>Available Slots</label>
+                            <div class="slots-grid">
+                                <button type="button" class="slot-btn disabled">09:00</button>
+                                <button type="button" class="slot-btn selected">09:15</button>
+                                <button type="button" class="slot-btn">09:30</button>
+                                <button type="button" class="slot-btn">09:45</button>
+                                <button type="button" class="slot-btn">10:00</button>
+                                <button type="button" class="slot-btn disabled">10:15</button>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn-confirm-booking">Confirm Booking</button>
+                    </form>
+                </div>
+            </aside>
+
+        </div>
+    </div>
+
+</body>
+</html>

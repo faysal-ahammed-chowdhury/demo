@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Details - Doctor Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <a href="dashboard.html"><img src="../images/logo-blue.png" alt="DocHouse"></a>
+            </div>
+            <div class="links">
+                <a class="link" href="dashboard.html"><i class="fa-solid fa-chart-pie"></i><span>Dashboard</span></a>
+                <a class="link active" href="sessions.html"><i class="fa-solid fa-calendar-days"></i><span>My Sessions</span></a>
+                <a class="link" href="appointments.html"><i class="fa-solid fa-user-injured"></i><span>Appointments</span></a>
+            </div>
+            <div class="user-actions">
+                <div class="profile-pill">
+                    <div class="user-details"><span class="welcome-text">Dr.</span><a href="profile.html" class="user-name">Sarah Jenkins</a></div>
+                    <div class="divider"></div>
+                    <a href="../auth/login.html" class="logout-icon"><i class="fa-solid fa-right-from-bracket"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="container">
+            <div class="header-flex">
+                <div>
+                    <h1>Session #SES-102</h1>
+                    <p>Managing appointments for this specific time block.</p>
+                </div>
+                <button class="btn-delete-large"><i class="fa-solid fa-trash"></i> Delete Session</button>
+            </div>
+        </div>
+    </div>
+
+    <section class="dashboard-section">
+        <div class="container">
+
+            <div class="session-summary-card">
+                <div class="summary-item">
+                    <span class="label">Date</span>
+                    <span class="value"><i class="fa-regular fa-calendar"></i> Dec 30, 2025</span>
+                </div>
+                <div class="summary-item">
+                    <span class="label">Time</span>
+                    <span class="value"><i class="fa-regular fa-clock"></i> 09:00 AM - 12:00 PM</span>
+                </div>
+                <div class="summary-item">
+                    <span class="label">Slot Duration</span>
+                    <span class="value"><i class="fa-solid fa-stopwatch"></i> 15 Minutes</span>
+                </div>
+                <div class="summary-item">
+                    <span class="label">Capacity</span>
+                    <span class="value"><strong>6</strong> / 12 Booked</span>
+                </div>
+            </div>
+
+            <div class="dashboard-block">
+                <div class="block-header">
+                    <h2>Booked Patients</h2>
+                </div>
+
+                <div class="table-wrapper">
+                    <table class="history-table">
+                        <thead>
+                            <tr>
+                                <th>Slot Time</th>
+                                <th>Patient Name</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>09:00 AM</strong></td>
+                                <td>
+                                    <div class="table-user">
+                                        <div class="avatar-circle">MR</div>
+                                        <span>Michael Ross</span>
+                                    </div>
+                                </td>
+                                <td><span class="status accepted">Accepted</span></td>
+                                <td>
+                                    <a href="appointment_details.html" class="btn-action view"><i class="fa-solid fa-eye"></i></a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><strong>09:15 AM</strong></td>
+                                <td>
+                                    <div class="table-user">
+                                        <div class="avatar-circle">LJ</div>
+                                        <span>Lisa Jenkins</span>
+                                    </div>
+                                </td>
+                                <td><span class="status pending">Pending</span></td>
+                                <td>
+                                    <div class="action-buttons-row">
+                                        <a href="appointment_details.html" class="btn-action view"><i class="fa-solid fa-eye"></i></a>
+                                        <button class="btn-icon accept"><i class="fa-solid fa-check"></i></button>
+                                        <button class="btn-icon reject"><i class="fa-solid fa-xmark"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>10:00 AM</strong></td>
+                                <td>
+                                    <div class="table-user">
+                                        <div class="avatar-circle">MR</div>
+                                        <span>Michael Ross</span>
+                                    </div>
+                                </td>
+                                <td><span class="status rejected">Rejected</span></td>
+                                <td>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</body>
+</html>
